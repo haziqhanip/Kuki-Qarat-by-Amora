@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuki Qarat by Amora | Premium Crunchy Delights</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* --- BRAND DESIGN SYSTEM --- */
+        :root {
+            --primary: #6F4E37;       /* Deep Rich Cookie Chocolate Brown */
+            --primary-hover: #523624;
+            --accent: #D4AF37;        /* Gold Accent Line Elegance */
+            --light-bg: #FDFBF7;      /* Warm Milky Cream Background */
+            --card-bg: #FFFFFF;
+            --text-dark: #2B2521;     /* Dark Charcoal Espresso */
+            --text-muted: #7A726C;
+            --shadow: 0 15px 35px rgba(111, 78, 55, 0.07);
+            --transition: all 0.3s ease;
+        }
+
+        /* --- RESET UTILITIES --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 16px;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* --- NAVIGATION BAR --- */
+        header {
+            background-color: rgba(253, 251, 247, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(111, 78, 55, 0.08);
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo span {
+            font-size: 0.9rem;
+            font-family: 'Poppins', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent);
+            display: block;
+        }
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+        }
+        .nav-links a {
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            transition: var(--transition);
+        }
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            padding: 180px 20px 100px;
+            background: radial-gradient(circle at top right, #FFF9F2 0%, var(--light-bg) 100%);
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+        }
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .tagline {
+            display: inline-block;
+            background-color: rgba(111, 78, 55, 0.08);
+            color: var(--primary);
+            padding: 6px 18px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+        }
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.8rem;
+            line-height: 1.15;
+            color: var(--text-dark);
+            margin-bottom: 25px;
+        }
+        .hero h1 span {
+            color: var(--primary);
+        }
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            max-width: 520px;
+        }
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background-color: var(--primary);
+            color: #FFFFFF;
+            padding: 16px 38px;
+            border-radius: 50px;
+            font-weight: 600;
+            box-shadow: 0 10px 25px rgba(111, 78, 55, 0.2);
+            transition: var(--transition);
+        }
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+        .hero-image-box img {
+            box-shadow: var(--shadow);
+            border: 8px solid #FFFFFF;
+        }
+
+        /* --- UTILITY HEADERS --- */
+        section {
+            padding: 110px 20px;
+        }
+        .section-header {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 65px;
+        }
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.6rem;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+        }
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        /* --- PRODUCTS / MENU SECTION --- */
+        .menu-section {
+            background-color: #FFFFFF;
+        }
+        .menu-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 70px;
+            align-items: center;
+        }
+        .menu-list {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        .menu-card {
+            background: var(--light-bg);
+            padding: 30px;
+            border-radius: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 4px solid transparent;
+            transition: var(--transition);
+        }
+        .menu-card:hover {
+            transform: scale(1.02);
+            border-bottom: 4px solid var(--primary);
+            box-shadow: var(--shadow);
+        }
+        .menu-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+        }
+        .menu-info p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+        .menu-action {
+            text-align: right;
+        }
+        .price-tag {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: block;
+            margin-bottom: 10px;
+        }
+        .order-btn-sm {
+            background-color: var(--text-dark);
+            color: #FFFFFF;
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* --- ADVANTAGES SECTION --- */
+        .benefits-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 70px;
+            align-items: center;
+        }
+        .features-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+        .feat-card {
+            background: var(--card-bg);
+            padding: 35px 25px;
+            border-radius: 24px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        .feat-card:hover {
+            transform: translateY(-5px);
+        }
+        .feat-icon {
+            width: 55px;
+            height: 55px;
+            background-color: rgba(111, 78, 55, 0.06);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.6rem;
+            margin-bottom: 22px;
+        }
+        .feat-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+        }
+        .feat-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* --- CTA SECTION --- */
+        .cta-section {
+            background: linear-gradient(135deg, #2B2521 0%, #171412 100%);
+            color: #FFFFFF;
+            text-align: center;
+            position: relative;
+        }
+        .cta-box {
+            max-width: 650px;
+            margin: 0 auto;
+        }
+        .cta-box h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+        .cta-box p {
+            color: #A59E98;
+            margin-bottom: 40px;
+            font-size: 1.05rem;
+        }
+        .btn-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background-color: #25D366;
+            color: #FFFFFF;
+            padding: 18px 45px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.25);
+            transition: var(--transition);
+        }
+        .btn-whatsapp:hover {
+            background-color: #20BA5A;
+            transform: translateY(-3px);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #12100E;
+            color: #665F5A;
+            padding: 35px 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            border-top: 1px solid #231F1C;
+        }
+
+        /* --- RESPONSIVE MOBILE FIXES --- */
+        @media (max-width: 968px) {
+            .hero-container, .menu-grid, .benefits-grid {
+                grid-template-columns: 1fr;
+                gap: 45px;
+                text-align: center;
+            }
+            .hero h1 {
+                font-size: 2.6rem;
+            }
+            .hero p {
+                margin: 0 auto 35px;
+            }
+            .nav-links {
+                display: none; /* Keeps navigation responsive and clutter-free on mobile */
+            }
+            .menu-showcase-img, .benefits-img-box {
+                order: -1;
+            }
+            .features-wrapper {
+                grid-template-columns: 1fr;
+            }
+            .menu-card {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+            .menu-action {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fa-solid fa-cookie-bite"></i>
+                <div>Kuki Qarat<span>by Amora</span></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#about">Why Us</a></li>
+                <li><a href="#contact">Order</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <span class="tagline">Premium Local Baker Treats</span>
+                <h1>Savor the Crunch of <span>Kuki Qarat</span></h1>
+                <p>Handcrafted with the finest ingredients and baked to crispy perfection. The ultimate treats produced lovingly by Amora Group for snack lovers.</p>
+                <a href="#menu" class="btn-primary">
+                    Explore Our Flavors <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+            <div class="hero-image-box">
+                <img src="promo.jpeg" alt="Kuki Qarat Promo Asset">
+            </div>
+        </div>
+    </section>
+
+    <section id="menu" class="menu-section">
+        <div class="section-header">
+            <h2>Our Menu Selection</h2>
+            <p>Check out our pricing packages and flavors crafted specially to brighten your day.</p>
+        </div>
+        <div class="menu-grid">
+            <div class="menu-list">
+                <div class="menu-card">
+                    <div class="menu-info">
+                        <h3>Kuki Qarat Standard Box</h3>
+                        <p>The perfect size for individual cravings or to sample our signature crunch.</p>
+                    </div>
+                    <div class="menu-action">
+                        <span class="price-tag">RM 15.00</span>
+                        <a href="#contact" class="order-btn-sm"><i class="fa-solid fa-plus"></i> Select</a>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <div class="menu-info">
+                        <h3>Kuki Qarat Party Pack</h3>
+                        <p>Ideal share size for friends, family gatherings, or treating your project groupmates!</p>
+                    </div>
+                    <div class="menu-action">
+                        <span class="price-tag">RM 28.00</span>
+                        <a href="#contact" class="order-btn-sm"><i class="fa-solid fa-plus"></i> Select</a>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-showcase-img">
+                <img src="menu.jpeg" alt="Kuki Qarat Menu Details">
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="section-header">
+            <h2>What Makes Us Special</h2>
+            <p>Every single cookie baked by Amora undergoes strict quality control to guarantee absolute bliss.</p>
+        </div>
+        <div class="benefits-grid">
+            <div class="benefits-img-box">
+                <img src="features.jpeg" alt="Why Choose Us Graphic">
+            </div>
+            <div class="features-wrapper">
+                <div class="feat-card">
+                    <div class="feat-icon"><i class="fa-solid fa-mortar-pestle"></i></div>
+                    <h3>Premium Ingredients</h3>
+                    <p>We source top-tier baking elements to ensure a luxury taste in every bite.</p>
+                </div>
+                <div class="feat-card">
+                    <div class="feat-icon"><i class="fa-solid fa-sheet-plastic"></i></div>
+                    <h3>Freshly Sealed</h3>
+                    <p>Packed immediately post-cooling to lock in moisture levels and structural crispness safely.</p>
+                </div>
+                <div class="feat-card">
+                    <div class="feat-icon"><i class="fa-solid fa-wallet"></i></div>
+                    <h3>Student Friendly</h3>
+                    <p>High-end snack experience scaled to affordable student budgeting structures.</p>
+                </div>
+                <div class="feat-card">
+                    <div class="feat-icon"><i class="fa-solid fa-heart"></i></div>
+                    <h3>Made with Love</h3>
+                    <p>Proudly presented by Amora Group as a hallmark of quality local student entrepreneurship.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="cta-section">
+        <div class="cta-box">
+            <h2>Get Your Kuki Qarat Today!</h2>
+            <p>We take orders directly via WhatsApp to ensure your cookies are kept safely reserved. Tap below to chat with our sales team instantly!</p>
+            <a href="https://wa.me/60195307600?text=Hi%20Amora%20Group!%20I'd%20love%20to%20order%20some%20Kuki%20Qarat!" target="_blank" class="btn-whatsapp">
+                <i class="fa-brands fa-whatsapp"></i> Chat & Order on WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Kuki Qarat by Amora. Created for Entrepreneurship Course Group Project. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
